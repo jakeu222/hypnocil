@@ -1,13 +1,45 @@
+// import React from "react"
+
+// function Header({ onSearch }) {
+
+//     function handleChange(e) {
+//         e.preventDefault()
+//         const searchText = e.target.value
+//         onSearch(searchText)
+//     }
+
+//     return (
+//         <header>
+//             <div>
+//                 <img src="./images/hypnocil-logo.png" />
+//                 <h1>Clinical Trials</h1>
+//             </div>
+//             <input id="search" type="text" onChange={handleChange} placeholder="Search..."></input>
+//         </header>
+//     );
+// }
+
+// export default Header;
+
+
+
 import React from "react"
 
-function Header() {
-    return(
+function Header({ onSearch }) {
+
+    function handleChange(event) {
+        event.preventDefault();
+        const searchText = event.target.value;
+        onSearch(searchText);
+    }
+
+    return (
         <header>
             <div>
-                <img src="./images/hypnocil-logo.png"/>
+                <img src="./images/hypnocil-logo.png" />
                 <h1>Clinical Trials</h1>
             </div>
-            <input id="search" type="text" placeholder="Search..."></input>
+            <input id="search" type="text" onChange={handleChange} placeholder="Search..."></input>
         </header>
     );
 }
